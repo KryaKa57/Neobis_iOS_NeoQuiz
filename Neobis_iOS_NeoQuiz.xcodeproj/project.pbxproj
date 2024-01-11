@@ -1,0 +1,583 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2506E2D140331B8E017C3509 /* Pods_Neobis_iOS_NeoQuiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84E3BF3B40CA57932D40C305 /* Pods_Neobis_iOS_NeoQuiz.framework */; };
+		645291612B4F829300855E7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291602B4F829300855E7E /* AppDelegate.swift */; };
+		645291632B4F829300855E7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291622B4F829300855E7E /* SceneDelegate.swift */; };
+		645291652B4F829300855E7E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291642B4F829300855E7E /* MainViewController.swift */; };
+		6452916A2B4F829400855E7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 645291692B4F829400855E7E /* Assets.xcassets */; };
+		6452916D2B4F829400855E7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6452916B2B4F829400855E7E /* LaunchScreen.storyboard */; };
+		645291782B4F838B00855E7E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291772B4F838B00855E7E /* MainView.swift */; };
+		645291862B4F90B200855E7E /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291852B4F90B200855E7E /* MainViewModel.swift */; };
+		645291882B4F90E900855E7E /* FirstSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291872B4F90E900855E7E /* FirstSectionViewModel.swift */; };
+		6452918A2B4F90FF00855E7E /* SecondSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291892B4F90FF00855E7E /* SecondSectionViewModel.swift */; };
+		6452918C2B4F918A00855E7E /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6452918B2B4F918A00855E7E /* BaseCell.swift */; };
+		6452918E2B4F91A500855E7E /* FirstSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6452918D2B4F91A500855E7E /* FirstSectionCell.swift */; };
+		645291902B4F91C300855E7E /* SecondSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6452918F2B4F91C300855E7E /* SecondSectionCell.swift */; };
+		645291922B4F92CE00855E7E /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291912B4F92CE00855E7E /* SectionHeader.swift */; };
+		645291952B4F987600855E7E /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291942B4F987600855E7E /* Endpoint.swift */; };
+		645291972B4F988000855E7E /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291962B4F988000855E7E /* HTTP.swift */; };
+		645291992B4F988D00855E7E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291982B4F988D00855E7E /* NetworkManager.swift */; };
+		645291AB2B50468800855E7E /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6452919B2B50468200855E7E /* Nunito-Black.ttf */; };
+		645291AC2B50468800855E7E /* Nunito-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6452919C2B50468300855E7E /* Nunito-MediumItalic.ttf */; };
+		645291AD2B50468800855E7E /* Nunito-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6452919D2B50468300855E7E /* Nunito-LightItalic.ttf */; };
+		645291AE2B50468800855E7E /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6452919E2B50468300855E7E /* Nunito-Bold.ttf */; };
+		645291AF2B50468800855E7E /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6452919F2B50468400855E7E /* Nunito-Light.ttf */; };
+		645291B02B50468800855E7E /* Nunito-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 645291A02B50468400855E7E /* Nunito-SemiBoldItalic.ttf */; };
+		645291B12B50468800855E7E /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 645291A12B50468400855E7E /* Nunito-Regular.ttf */; };
+		645291B22B50468800855E7E /* Nunito-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 645291A22B50468500855E7E /* Nunito-Medium.ttf */; };
+		645291B32B50468800855E7E /* Nunito-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 645291A32B50468500855E7E /* Nunito-BoldItalic.ttf */; };
+		645291B42B50468800855E7E /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 645291A42B50468500855E7E /* Nunito-SemiBold.ttf */; };
+		645291B52B50468800855E7E /* Nunito-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 645291A52B50468600855E7E /* Nunito-ExtraLight.ttf */; };
+		645291B62B50468800855E7E /* Nunito-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 645291A62B50468600855E7E /* Nunito-BlackItalic.ttf */; };
+		645291B72B50468800855E7E /* Nunito-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 645291A72B50468600855E7E /* Nunito-ExtraLightItalic.ttf */; };
+		645291B82B50468800855E7E /* Nunito-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 645291A82B50468700855E7E /* Nunito-ExtraBoldItalic.ttf */; };
+		645291B92B50468800855E7E /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 645291A92B50468700855E7E /* Nunito-ExtraBold.ttf */; };
+		645291BA2B50468800855E7E /* Nunito-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 645291AA2B50468700855E7E /* Nunito-Italic.ttf */; };
+		645291BD2B50469600855E7E /* Nunito-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 645291BB2B50469500855E7E /* Nunito-Italic-VariableFont_wght.ttf */; };
+		645291BE2B50469600855E7E /* Nunito-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 645291BC2B50469500855E7E /* Nunito-VariableFont_wght.ttf */; };
+		645291C12B50521900855E7E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291C02B50521900855E7E /* Models.swift */; };
+		645291C42B50559200855E7E /* Extension + UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291C32B50559200855E7E /* Extension + UIColor.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1C3D3D630D86D5F2CBA503ED /* Pods-Neobis_iOS_NeoQuiz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neobis_iOS_NeoQuiz.debug.xcconfig"; path = "Target Support Files/Pods-Neobis_iOS_NeoQuiz/Pods-Neobis_iOS_NeoQuiz.debug.xcconfig"; sourceTree = "<group>"; };
+		5B50C09066E4237C1CF5872D /* Pods-Neobis_iOS_NeoQuiz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neobis_iOS_NeoQuiz.release.xcconfig"; path = "Target Support Files/Pods-Neobis_iOS_NeoQuiz/Pods-Neobis_iOS_NeoQuiz.release.xcconfig"; sourceTree = "<group>"; };
+		6452915D2B4F829200855E7E /* Neobis_iOS_NeoQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neobis_iOS_NeoQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		645291602B4F829300855E7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		645291622B4F829300855E7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		645291642B4F829300855E7E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		645291692B4F829400855E7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6452916C2B4F829400855E7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6452916E2B4F829400855E7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		645291772B4F838B00855E7E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		645291852B4F90B200855E7E /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		645291872B4F90E900855E7E /* FirstSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSectionViewModel.swift; sourceTree = "<group>"; };
+		645291892B4F90FF00855E7E /* SecondSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSectionViewModel.swift; sourceTree = "<group>"; };
+		6452918B2B4F918A00855E7E /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
+		6452918D2B4F91A500855E7E /* FirstSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSectionCell.swift; sourceTree = "<group>"; };
+		6452918F2B4F91C300855E7E /* SecondSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSectionCell.swift; sourceTree = "<group>"; };
+		645291912B4F92CE00855E7E /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		645291942B4F987600855E7E /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		645291962B4F988000855E7E /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
+		645291982B4F988D00855E7E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		6452919B2B50468200855E7E /* Nunito-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Black.ttf"; sourceTree = "<group>"; };
+		6452919C2B50468300855E7E /* Nunito-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-MediumItalic.ttf"; sourceTree = "<group>"; };
+		6452919D2B50468300855E7E /* Nunito-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-LightItalic.ttf"; sourceTree = "<group>"; };
+		6452919E2B50468300855E7E /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
+		6452919F2B50468400855E7E /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
+		645291A02B50468400855E7E /* Nunito-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		645291A12B50468400855E7E /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		645291A22B50468500855E7E /* Nunito-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Medium.ttf"; sourceTree = "<group>"; };
+		645291A32B50468500855E7E /* Nunito-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-BoldItalic.ttf"; sourceTree = "<group>"; };
+		645291A42B50468500855E7E /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
+		645291A52B50468600855E7E /* Nunito-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraLight.ttf"; sourceTree = "<group>"; };
+		645291A62B50468600855E7E /* Nunito-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-BlackItalic.ttf"; sourceTree = "<group>"; };
+		645291A72B50468600855E7E /* Nunito-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		645291A82B50468700855E7E /* Nunito-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		645291A92B50468700855E7E /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
+		645291AA2B50468700855E7E /* Nunito-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Italic.ttf"; sourceTree = "<group>"; };
+		645291BB2B50469500855E7E /* Nunito-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		645291BC2B50469500855E7E /* Nunito-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		645291C02B50521900855E7E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		645291C32B50559200855E7E /* Extension + UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIColor.swift"; sourceTree = "<group>"; };
+		84E3BF3B40CA57932D40C305 /* Pods_Neobis_iOS_NeoQuiz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Neobis_iOS_NeoQuiz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6452915A2B4F829200855E7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2506E2D140331B8E017C3509 /* Pods_Neobis_iOS_NeoQuiz.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		28A0BEF7D55CFC9074EBB41E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84E3BF3B40CA57932D40C305 /* Pods_Neobis_iOS_NeoQuiz.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		645291542B4F829200855E7E = {
+			isa = PBXGroup;
+			children = (
+				6452915F2B4F829200855E7E /* Neobis_iOS_NeoQuiz */,
+				6452915E2B4F829200855E7E /* Products */,
+				8C2B56D12CC686DC2A73C511 /* Pods */,
+				28A0BEF7D55CFC9074EBB41E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6452915E2B4F829200855E7E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6452915D2B4F829200855E7E /* Neobis_iOS_NeoQuiz.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6452915F2B4F829200855E7E /* Neobis_iOS_NeoQuiz */ = {
+			isa = PBXGroup;
+			children = (
+				645291932B4F985400855E7E /* API */,
+				645291752B4F837300855E7E /* MainScreen */,
+				645291742B4F835900855E7E /* Supporting files */,
+				6452916E2B4F829400855E7E /* Info.plist */,
+				645291C22B50558200855E7E /* Extensions */,
+			);
+			path = Neobis_iOS_NeoQuiz;
+			sourceTree = "<group>";
+		};
+		645291742B4F835900855E7E /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				6452919A2B50466900855E7E /* fonts */,
+				6452916B2B4F829400855E7E /* LaunchScreen.storyboard */,
+				645291602B4F829300855E7E /* AppDelegate.swift */,
+				645291622B4F829300855E7E /* SceneDelegate.swift */,
+				645291692B4F829400855E7E /* Assets.xcassets */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		645291752B4F837300855E7E /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				645291642B4F829300855E7E /* MainViewController.swift */,
+				645291772B4F838B00855E7E /* MainView.swift */,
+				645291852B4F90B200855E7E /* MainViewModel.swift */,
+				645291872B4F90E900855E7E /* FirstSectionViewModel.swift */,
+				645291892B4F90FF00855E7E /* SecondSectionViewModel.swift */,
+				6452918B2B4F918A00855E7E /* BaseCell.swift */,
+				6452918D2B4F91A500855E7E /* FirstSectionCell.swift */,
+				6452918F2B4F91C300855E7E /* SecondSectionCell.swift */,
+				645291912B4F92CE00855E7E /* SectionHeader.swift */,
+				645291C02B50521900855E7E /* Models.swift */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		645291932B4F985400855E7E /* API */ = {
+			isa = PBXGroup;
+			children = (
+				645291942B4F987600855E7E /* Endpoint.swift */,
+				645291962B4F988000855E7E /* HTTP.swift */,
+				645291982B4F988D00855E7E /* NetworkManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		6452919A2B50466900855E7E /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6452919B2B50468200855E7E /* Nunito-Black.ttf */,
+				645291BB2B50469500855E7E /* Nunito-Italic-VariableFont_wght.ttf */,
+				645291BC2B50469500855E7E /* Nunito-VariableFont_wght.ttf */,
+				645291A62B50468600855E7E /* Nunito-BlackItalic.ttf */,
+				6452919E2B50468300855E7E /* Nunito-Bold.ttf */,
+				645291A32B50468500855E7E /* Nunito-BoldItalic.ttf */,
+				645291A92B50468700855E7E /* Nunito-ExtraBold.ttf */,
+				645291A82B50468700855E7E /* Nunito-ExtraBoldItalic.ttf */,
+				645291A52B50468600855E7E /* Nunito-ExtraLight.ttf */,
+				645291A72B50468600855E7E /* Nunito-ExtraLightItalic.ttf */,
+				645291AA2B50468700855E7E /* Nunito-Italic.ttf */,
+				6452919F2B50468400855E7E /* Nunito-Light.ttf */,
+				6452919D2B50468300855E7E /* Nunito-LightItalic.ttf */,
+				645291A22B50468500855E7E /* Nunito-Medium.ttf */,
+				6452919C2B50468300855E7E /* Nunito-MediumItalic.ttf */,
+				645291A12B50468400855E7E /* Nunito-Regular.ttf */,
+				645291A42B50468500855E7E /* Nunito-SemiBold.ttf */,
+				645291A02B50468400855E7E /* Nunito-SemiBoldItalic.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		645291C22B50558200855E7E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				645291C32B50559200855E7E /* Extension + UIColor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8C2B56D12CC686DC2A73C511 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1C3D3D630D86D5F2CBA503ED /* Pods-Neobis_iOS_NeoQuiz.debug.xcconfig */,
+				5B50C09066E4237C1CF5872D /* Pods-Neobis_iOS_NeoQuiz.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6452915C2B4F829200855E7E /* Neobis_iOS_NeoQuiz */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 645291712B4F829400855E7E /* Build configuration list for PBXNativeTarget "Neobis_iOS_NeoQuiz" */;
+			buildPhases = (
+				87AB5588029298EBA4475CF8 /* [CP] Check Pods Manifest.lock */,
+				645291592B4F829200855E7E /* Sources */,
+				6452915A2B4F829200855E7E /* Frameworks */,
+				6452915B2B4F829200855E7E /* Resources */,
+				D9FE9BB3751A7FA02E5A6416 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Neobis_iOS_NeoQuiz;
+			productName = Neobis_iOS_NeoQuiz;
+			productReference = 6452915D2B4F829200855E7E /* Neobis_iOS_NeoQuiz.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		645291552B4F829200855E7E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					6452915C2B4F829200855E7E = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 645291582B4F829200855E7E /* Build configuration list for PBXProject "Neobis_iOS_NeoQuiz" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 645291542B4F829200855E7E;
+			productRefGroup = 6452915E2B4F829200855E7E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6452915C2B4F829200855E7E /* Neobis_iOS_NeoQuiz */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6452915B2B4F829200855E7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				645291B42B50468800855E7E /* Nunito-SemiBold.ttf in Resources */,
+				645291BA2B50468800855E7E /* Nunito-Italic.ttf in Resources */,
+				645291B72B50468800855E7E /* Nunito-ExtraLightItalic.ttf in Resources */,
+				645291AC2B50468800855E7E /* Nunito-MediumItalic.ttf in Resources */,
+				645291AF2B50468800855E7E /* Nunito-Light.ttf in Resources */,
+				6452916D2B4F829400855E7E /* LaunchScreen.storyboard in Resources */,
+				645291B32B50468800855E7E /* Nunito-BoldItalic.ttf in Resources */,
+				6452916A2B4F829400855E7E /* Assets.xcassets in Resources */,
+				645291BE2B50469600855E7E /* Nunito-VariableFont_wght.ttf in Resources */,
+				645291B22B50468800855E7E /* Nunito-Medium.ttf in Resources */,
+				645291B62B50468800855E7E /* Nunito-BlackItalic.ttf in Resources */,
+				645291B02B50468800855E7E /* Nunito-SemiBoldItalic.ttf in Resources */,
+				645291AD2B50468800855E7E /* Nunito-LightItalic.ttf in Resources */,
+				645291B82B50468800855E7E /* Nunito-ExtraBoldItalic.ttf in Resources */,
+				645291B12B50468800855E7E /* Nunito-Regular.ttf in Resources */,
+				645291B92B50468800855E7E /* Nunito-ExtraBold.ttf in Resources */,
+				645291AE2B50468800855E7E /* Nunito-Bold.ttf in Resources */,
+				645291AB2B50468800855E7E /* Nunito-Black.ttf in Resources */,
+				645291BD2B50469600855E7E /* Nunito-Italic-VariableFont_wght.ttf in Resources */,
+				645291B52B50468800855E7E /* Nunito-ExtraLight.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		87AB5588029298EBA4475CF8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Neobis_iOS_NeoQuiz-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9FE9BB3751A7FA02E5A6416 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Neobis_iOS_NeoQuiz/Pods-Neobis_iOS_NeoQuiz-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Neobis_iOS_NeoQuiz/Pods-Neobis_iOS_NeoQuiz-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Neobis_iOS_NeoQuiz/Pods-Neobis_iOS_NeoQuiz-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		645291592B4F829200855E7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				645291862B4F90B200855E7E /* MainViewModel.swift in Sources */,
+				6452918A2B4F90FF00855E7E /* SecondSectionViewModel.swift in Sources */,
+				6452918E2B4F91A500855E7E /* FirstSectionCell.swift in Sources */,
+				645291882B4F90E900855E7E /* FirstSectionViewModel.swift in Sources */,
+				645291652B4F829300855E7E /* MainViewController.swift in Sources */,
+				6452918C2B4F918A00855E7E /* BaseCell.swift in Sources */,
+				645291782B4F838B00855E7E /* MainView.swift in Sources */,
+				645291972B4F988000855E7E /* HTTP.swift in Sources */,
+				645291902B4F91C300855E7E /* SecondSectionCell.swift in Sources */,
+				645291C42B50559200855E7E /* Extension + UIColor.swift in Sources */,
+				645291C12B50521900855E7E /* Models.swift in Sources */,
+				645291922B4F92CE00855E7E /* SectionHeader.swift in Sources */,
+				645291992B4F988D00855E7E /* NetworkManager.swift in Sources */,
+				645291612B4F829300855E7E /* AppDelegate.swift in Sources */,
+				645291952B4F987600855E7E /* Endpoint.swift in Sources */,
+				645291632B4F829300855E7E /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6452916B2B4F829400855E7E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6452916C2B4F829400855E7E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6452916F2B4F829400855E7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		645291702B4F829400855E7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		645291722B4F829400855E7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C3D3D630D86D5F2CBA503ED /* Pods-Neobis_iOS_NeoQuiz.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W2CT3M99U7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Neobis_iOS_NeoQuiz/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Kr57.Neobis-iOS-NeoQuiz";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		645291732B4F829400855E7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B50C09066E4237C1CF5872D /* Pods-Neobis_iOS_NeoQuiz.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W2CT3M99U7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Neobis_iOS_NeoQuiz/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Kr57.Neobis-iOS-NeoQuiz";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		645291582B4F829200855E7E /* Build configuration list for PBXProject "Neobis_iOS_NeoQuiz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6452916F2B4F829400855E7E /* Debug */,
+				645291702B4F829400855E7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		645291712B4F829400855E7E /* Build configuration list for PBXNativeTarget "Neobis_iOS_NeoQuiz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				645291722B4F829400855E7E /* Debug */,
+				645291732B4F829400855E7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 645291552B4F829200855E7E /* Project object */;
+}

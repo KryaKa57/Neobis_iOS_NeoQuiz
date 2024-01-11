@@ -1,0 +1,20 @@
+//
+//  FirstSectionViewModel.swift
+//  Neobis_iOS_NeoQuiz
+//
+//  Created by Alisher on 11.01.2024.
+//
+
+import Foundation
+
+class FirstSectionViewModel {
+    var sections: [ArticleData] = [
+        ArticleData(name: "Жизнь и правление Наполеона Бонапарта", subjectName: "История", imageName: "napoleon"),
+        ArticleData(name: "Философия Аристотеля", subjectName: "Философия", imageName: "aristotel"),
+        ArticleData(name: "Почему Чехов не так прост?", subjectName: "Литература", imageName: "chekhov"),
+        ArticleData(name: "Почему вы неправильно поняли «Мастера и Маргариту»?", subjectName: "Литература", imageName: "margarita")
+    ]
+    
+    var colorsHex = [0xFFE0A3, 0xCCFFF6, 0xFFCCFD, 0xADD3FF, 0xFFA9A3, 0xCCFFD4, 0xD0CCFF, 0xFDFFAD]
+    
+}
