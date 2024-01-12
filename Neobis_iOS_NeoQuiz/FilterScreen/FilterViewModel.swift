@@ -8,5 +8,6 @@
 import Foundation
 
 class FilterViewModel {
-    var genres = ["Philosophy","History","Literature"]
+    var genres = ["Philosophy", "History", "Literature"]
+    var selectedItems: [Bool] = Array(repeating: false, count: 3)
 }

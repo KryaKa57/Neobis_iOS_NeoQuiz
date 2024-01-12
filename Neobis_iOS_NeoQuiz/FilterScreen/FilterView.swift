@@ -32,21 +32,12 @@ class FilterView: UIView {
         return label
     }()
     
-    lazy var infoLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .black
-        label.text = "test"
-        label.font = UIFont(name: "Nunito-Medium", size: 12)
-        return label
-    }()
-    
-    lazy var descrtiptionLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .black
-        label.text = "test"
-        label.font = UIFont(name: "Nunito-Medium", size: 12)
-        label.numberOfLines = 0
-        return label
+    lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = .white
+        tableView.register(CheckboxTableViewCell.self, forCellReuseIdentifier: CheckboxTableViewCell.reuseIdentifier)
+        return tableView
     }()
     
     override init(frame: CGRect) {
@@ -61,8 +52,7 @@ class FilterView: UIView {
     private func initialize() {
         backgroundColor = .white
         contentStackView.addArrangedSubview(nameLabel)
-        contentStackView.addArrangedSubview(infoLabel)
-        contentStackView.addArrangedSubview(descrtiptionLabel)
+        contentStackView.addArrangedSubview(tableView)
         scrollView.addSubview(contentStackView)
         addSubview(scrollView)
         
@@ -75,18 +65,15 @@ class FilterView: UIView {
         nameLabel.snp.makeConstraints { make in
             make.width.equalToSuperview().offset(-32)
         }
-        infoLabel.snp.makeConstraints { make in
-            make.width.equalToSuperview().offset(-32)
-        }
-        descrtiptionLabel.snp.makeConstraints { make in
+        tableView.snp.makeConstraints { make in
             make.width.equalToSuperview().offset(-32)
         }
     }
     
-    func configure(_ article: ArticleFullResponse) {
-        nameLabel.text = article.name
-        infoLabel.text = "#\(article.genre.prefix(1).uppercased() + article.genre.lowercased().dropFirst()) ◾️ \(article.time) minutes"
-        descrtiptionLabel.text = article.description
+    func configureUI(_ itemCount: Int) {
+        tableView.snp.makeConstraints { make in
+            make.height.equalTo(100 * itemCount + 200)
+        }
     }
 }
 

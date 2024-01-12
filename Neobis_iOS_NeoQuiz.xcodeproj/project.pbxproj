@@ -59,6 +59,7 @@
 		645291E72B51EA9900855E7E /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291E62B51EA9900855E7E /* FilterView.swift */; };
 		645291E92B51EAA400855E7E /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291E82B51EAA400855E7E /* FilterViewModel.swift */; };
 		645291EB2B51EAAB00855E7E /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291EA2B51EAAB00855E7E /* FilterViewController.swift */; };
+		645291ED2B51F56400855E7E /* CheckboxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291EC2B51F56400855E7E /* CheckboxTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +118,7 @@
 		645291E62B51EA9900855E7E /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		645291E82B51EAA400855E7E /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 		645291EA2B51EAAB00855E7E /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		645291EC2B51F56400855E7E /* CheckboxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxTableViewCell.swift; sourceTree = "<group>"; };
 		84E3BF3B40CA57932D40C305 /* Pods_Neobis_iOS_NeoQuiz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Neobis_iOS_NeoQuiz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -293,6 +295,7 @@
 				645291E62B51EA9900855E7E /* FilterView.swift */,
 				645291E82B51EAA400855E7E /* FilterViewModel.swift */,
 				645291EA2B51EAAB00855E7E /* FilterViewController.swift */,
+				645291EC2B51F56400855E7E /* CheckboxTableViewCell.swift */,
 			);
 			path = FilterScreen;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				645291612B4F829300855E7E /* AppDelegate.swift in Sources */,
 				645291C92B50823F00855E7E /* ArticleListViewController.swift in Sources */,
 				645291D82B51548000855E7E /* Extension + UIImage.swift in Sources */,
+				645291ED2B51F56400855E7E /* CheckboxTableViewCell.swift in Sources */,
 				645291952B4F987600855E7E /* Endpoint.swift in Sources */,
 				645291632B4F829300855E7E /* SceneDelegate.swift in Sources */,
 				645291DB2B5163D100855E7E /* Models.swift in Sources */,
