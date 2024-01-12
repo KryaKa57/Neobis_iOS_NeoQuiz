@@ -31,7 +31,7 @@ class MainView: UIView {
     }
     
     private func initialize() {
-        
+        addSubview(collectionView)
     }
     
     func createLayout() -> UICollectionViewLayout {

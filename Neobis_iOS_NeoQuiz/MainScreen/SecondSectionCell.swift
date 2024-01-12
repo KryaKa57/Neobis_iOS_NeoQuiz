@@ -10,27 +10,27 @@ import UIKit
 import SnapKit
 
 class SecondSectionCell: BaseCell {
-    let subjectLabel: UILabel = {
+    lazy var subjectLabel: UILabel = {
         let label = UILabel()
         label.text = "Иcтория"
-        label.font = UIFont(name: "Nunito-ExtraBold", size: 24)
-        label.textAlignment = .left
+        label.font = UIFont(name: "Nunito-ExtraBold", size: 16)
+        label.textAlignment = .center
         label.textColor = .black
         label.numberOfLines = 0
         return label
     }()
     
-    let countOfQuestionsLabel: UILabel = {
+    lazy var countOfQuestionsLabel: UILabel = {
         let label = UILabel()
         label.text = "10 вопросов"
         label.font = UIFont(name: "Nunito-Medium", size: 12)
-        label.textAlignment = .left
+        label.textAlignment = .center
         label.textColor = .black
         label.numberOfLines = 0
         return label
     }()
     
-    let subjectImageView: UIImageView = {
+    lazy var subjectImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "history")
         imageView.contentMode = .scaleAspectFit
@@ -64,7 +64,8 @@ class SecondSectionCell: BaseCell {
         }
         subjectLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(subjectImageView.snp.bottom).offset(16)
+            make.leading.equalToSuperview().offset(8)
+            make.top.equalTo(subjectImageView.snp.bottom).offset(24)
         }
         countOfQuestionsLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -72,10 +73,15 @@ class SecondSectionCell: BaseCell {
         }
     }
     
-    func configure(_ subject: String, _ countQuestions: Int,  _ imageName: String, _ color: Int) {
-        subjectLabel.text = subject
-        countOfQuestionsLabel.text = "\(countQuestions) вопросов"
-        subjectImageView.image = UIImage(named: imageName)
+    func configure(_ quiz: QuizResponse, _ color: Int) {
+        subjectLabel.text = quiz.name
+        countOfQuestionsLabel.text = "\(quiz.questionAmount) questions"
+        subjectImageView.image = UIImage(named: quiz.genre.lowercased())
         backgroundColor = UIColor(rgb: color)
     }
 }
+
+//        QuizData(subjectName: "История", countQuestion: 10, imageName: "history"),
+//        QuizData(subjectName: "Литература", countQuestion: 15, imageName: "literature"),
+//        QuizData(subjectName: "Философия", countQuestion: 10, imageName: "philosophy"),
+//        QuizData(subjectName: "Психология", countQuestion: 20, imageName: "psychology"),

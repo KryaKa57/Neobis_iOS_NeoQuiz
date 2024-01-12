@@ -1,15 +1,15 @@
 //
-//  FirstSectionCell.swift
+//  ArticleCell.swift
 //  Neobis_iOS_NeoQuiz
 //
-//  Created by Alisher on 11.01.2024.
+//  Created by Alisher on 12.01.2024.
 //
 
 import Foundation
 import UIKit
 import SnapKit
 
-class FirstSectionCell: BaseCell {
+class ArticleCell: BaseCell {
     lazy var descrtiptionLabel: UILabel = {
         let label = UILabel()
         label.text = "Жизнь и правление Наполеона Бонапарта"
@@ -22,8 +22,8 @@ class FirstSectionCell: BaseCell {
     
     lazy var subjectLabel: UILabel = {
         let label = UILabel()
-        label.text = "#История"
-        label.font = UIFont(name: "Nunito-ExtraBold", size: 12)
+        label.text = "#История ◾️ 15 минут"
+        label.font = UIFont(name: "Nunito-Medium", size: 12)
         label.textAlignment = .left
         label.textColor = .black
         label.numberOfLines = 0
@@ -37,6 +37,15 @@ class FirstSectionCell: BaseCell {
         return imageView
     }()
     
+    lazy var leftStackView: UIStackView = {
+        let stack = UIStackView()
+        stack.spacing = 8
+        stack.axis = .vertical
+        stack.alignment = .fill
+        stack.distribution = .fill
+        return stack
+    }()
+    
     override func setupUI() {
         super.setupUI()
         
@@ -44,8 +53,9 @@ class FirstSectionCell: BaseCell {
         self.layer.borderColor = UIColor.black.cgColor
         self.layer.borderWidth = 2
 
-        addSubview(descrtiptionLabel)
-        addSubview(subjectLabel)
+        leftStackView.addArrangedSubview(descrtiptionLabel)
+        leftStackView.addArrangedSubview(subjectLabel)
+        addSubview(leftStackView)
         addSubview(subjectImageView)
         setupConstraints()
     }
@@ -54,20 +64,17 @@ class FirstSectionCell: BaseCell {
         guard let width = subjectImageView.image?.size.width else { return }
         guard let height = subjectImageView.image?.size.height else { return }
 
-        let aspectRatio = Int(width) / Int(height)
+        let aspectRatio: Double = (height) / (width)
         
-        descrtiptionLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(16)
-            make.leading.trailing.equalToSuperview().inset(8)
-        }
-        subjectLabel.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().inset(16)
+        leftStackView.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
             make.leading.equalToSuperview().offset(8)
-            make.trailing.equalToSuperview().dividedBy(2)
+            make.width.equalToSuperview().multipliedBy(0.7)
         }
+        
         subjectImageView.snp.makeConstraints { make in
-            make.width.equalToSuperview().multipliedBy(0.6)
-            make.height.equalTo(subjectImageView.snp.width).multipliedBy(aspectRatio)
+            make.height.equalToSuperview()
+            make.width.equalTo(subjectImageView.snp.height).multipliedBy(aspectRatio)
             make.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }
@@ -83,13 +90,8 @@ class FirstSectionCell: BaseCell {
         }
         
         descrtiptionLabel.text = article.name
-        subjectLabel.text = "#\(article.genre.prefix(1).uppercased() + article.genre.lowercased().dropFirst())"
+        subjectLabel.text = "#\(article.genre.prefix(1).uppercased() + article.genre.lowercased().dropFirst()) ◾️ \(article.time) minutes"
         subjectImageView.image = UIImage(named: imageName)
         backgroundColor = UIColor(rgb: color)
     }
 }
-
-//        ArticleData(name: "Жизнь и правление Наполеона Бонапарта", subjectName: "История", imageName: "napoleon", minutes: 15),
-//        ArticleData(name: "Философия Аристотеля", subjectName: "Философия", imageName: "aristotel", minutes: 15),
-//        ArticleData(name: "Почему Чехов не так прост?", subjectName: "Литература", imageName: "chekhov", minutes: 10),
-//        ArticleData(name: "Почему вы неправильно поняли «Мастера и Маргариту»?", subjectName: "Литература", imageName: "margarita", minutes: 10)

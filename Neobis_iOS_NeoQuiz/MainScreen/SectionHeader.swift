@@ -9,8 +9,15 @@ import Foundation
 import UIKit
 import SnapKit
 
+protocol NavigationDelegate: AnyObject {
+    func buttonTapped(_ sectionIndex: Int)
+}
+
 class SectionHeader: BaseCell {
-    let titleLabel: UILabel = {
+    var sectionIndex = 0
+    weak var delegate: NavigationDelegate?
+    
+    lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Header"
         label.textAlignment = .left
@@ -19,18 +26,20 @@ class SectionHeader: BaseCell {
         return label
     }()
     
-    let iconImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "arrow.right",
-                                  withConfiguration: UIImage.SymbolConfiguration(pointSize: 24, weight: .bold))
-        imageView.tintColor = .black
-        return imageView
+    lazy var iconButton: UIButton = {
+        let button = UIButton()
+        let image = UIImage(systemName: "arrow.right",
+                            withConfiguration: UIImage.SymbolConfiguration(pointSize: 24, weight: .bold))
+        button.setImage(image, for: .normal)
+        button.tintColor = .black
+        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        return button
     }()
 
     override func setupUI() {
         super.setupUI()
         addSubview(titleLabel)
-        addSubview(iconImageView)
+        addSubview(iconButton)
         setupConstraints()
     }
 
@@ -39,13 +48,18 @@ class SectionHeader: BaseCell {
             make.leading.equalToSuperview().offset(10)
             make.centerY.equalToSuperview()
         }
-        iconImageView.snp.makeConstraints { make in
+        iconButton.snp.makeConstraints { make in
             make.trailing.equalToSuperview().inset(10)
             make.centerY.equalToSuperview()
         }
     }
 
-    func configure(title: String) {
+    func configure(title: String, sectionIndex: Int) {
         titleLabel.text = title
+        self.sectionIndex = sectionIndex
+    }
+    
+    @objc func buttonTapped() {
+        delegate?.buttonTapped(sectionIndex)
     }
 }
