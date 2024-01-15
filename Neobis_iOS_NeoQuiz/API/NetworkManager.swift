@@ -42,8 +42,6 @@ class NetworkManager {
             }
             
             if let data = data {
-                print(request.url)
-                print(String(data: data, encoding: .utf8))
                 do {
                     let decoder = JSONDecoder()
                     decoder.keyDecodingStrategy = .convertFromSnakeCase

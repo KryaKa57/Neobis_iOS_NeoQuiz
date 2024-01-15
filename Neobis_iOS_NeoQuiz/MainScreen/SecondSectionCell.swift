@@ -76,7 +76,8 @@ class SecondSectionCell: BaseCell {
     func configure(_ quiz: QuizResponse, _ color: Int) {
         subjectLabel.text = quiz.name
         countOfQuestionsLabel.text = "\(quiz.questionAmount) questions"
-        subjectImageView.image = UIImage(named: quiz.genre.lowercased())
+        subjectImageView.loadImage(from: quiz.imageUrl)
+        
         backgroundColor = UIColor(rgb: color)
     }
 }

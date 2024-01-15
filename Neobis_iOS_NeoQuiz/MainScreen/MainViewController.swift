@@ -73,6 +73,10 @@ extension MainViewController: NavigationDelegate  {
             let nextScreen = ArticleListViewController(view: ArticleListView()
                                                        , viewModel: ArticleListViewModel())
             self.navigationController?.pushViewController(nextScreen, animated: true)
+        } else {
+            let nextScreen = QuizListViewController(view: QuizListView()
+                                                           , viewModel: QuizListViewModel())
+            self.navigationController?.pushViewController(nextScreen, animated: true)
         }
     }
 }

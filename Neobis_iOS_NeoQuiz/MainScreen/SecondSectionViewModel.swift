@@ -9,10 +9,6 @@ import Foundation
 
 class SecondSectionViewModel {
     var sections: [QuizResponse] = [
-        QuizResponse(name: "История", genre: "История", questionAmount: 0),
-        QuizResponse(name: "История", genre: "История", questionAmount: 0),
-        QuizResponse(name: "История", genre: "История", questionAmount: 0),
-        QuizResponse(name: "История", genre: "История", questionAmount: 0)
         
 //        QuizData(subjectName: "История", countQuestion: 10, imageName: "history"),
 //        QuizData(subjectName: "Литература", countQuestion: 15, imageName: "literature"),

@@ -49,7 +49,6 @@
 		645291CE2B513C9D00855E7E /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291CD2B513C9D00855E7E /* NavigationManager.swift */; };
 		645291D22B513FFB00855E7E /* CustomTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291D12B513FFB00855E7E /* CustomTitleView.swift */; };
 		645291D42B5143B800855E7E /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291D32B5143B800855E7E /* ArticleCell.swift */; };
-		645291D62B514A6500855E7E /* ArticleCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291D52B514A6500855E7E /* ArticleCellHeader.swift */; };
 		645291D82B51548000855E7E /* Extension + UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291D72B51548000855E7E /* Extension + UIImage.swift */; };
 		645291DB2B5163D100855E7E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291DA2B5163D100855E7E /* Models.swift */; };
 		645291DE2B51C6D200855E7E /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291DD2B51C6D200855E7E /* ArticleView.swift */; };
@@ -60,6 +59,13 @@
 		645291E92B51EAA400855E7E /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291E82B51EAA400855E7E /* FilterViewModel.swift */; };
 		645291EB2B51EAAB00855E7E /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291EA2B51EAAB00855E7E /* FilterViewController.swift */; };
 		645291ED2B51F56400855E7E /* CheckboxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291EC2B51F56400855E7E /* CheckboxTableViewCell.swift */; };
+		645291EF2B530FF800855E7E /* Extension + UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291EE2B530FF800855E7E /* Extension + UIImageView.swift */; };
+		645291F12B535B2800855E7E /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291F02B535B2800855E7E /* CustomButton.swift */; };
+		645291F32B547D3800855E7E /* CheckboxTableFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291F22B547D3800855E7E /* CheckboxTableFooter.swift */; };
+		645291F62B54A6B500855E7E /* QuizListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291F52B54A6B500855E7E /* QuizListView.swift */; };
+		645291F82B54A6C800855E7E /* QuizListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291F72B54A6C800855E7E /* QuizListViewController.swift */; };
+		645291FA2B54A6D700855E7E /* QuizListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291F92B54A6D700855E7E /* QuizListViewModel.swift */; };
+		645291FC2B54AA2A00855E7E /* QuizListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645291FB2B54AA2A00855E7E /* QuizListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,7 +114,6 @@
 		645291CD2B513C9D00855E7E /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		645291D12B513FFB00855E7E /* CustomTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTitleView.swift; sourceTree = "<group>"; };
 		645291D32B5143B800855E7E /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
-		645291D52B514A6500855E7E /* ArticleCellHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCellHeader.swift; sourceTree = "<group>"; };
 		645291D72B51548000855E7E /* Extension + UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIImage.swift"; sourceTree = "<group>"; };
 		645291DA2B5163D100855E7E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		645291DD2B51C6D200855E7E /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
@@ -119,6 +124,13 @@
 		645291E82B51EAA400855E7E /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 		645291EA2B51EAAB00855E7E /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		645291EC2B51F56400855E7E /* CheckboxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxTableViewCell.swift; sourceTree = "<group>"; };
+		645291EE2B530FF800855E7E /* Extension + UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIImageView.swift"; sourceTree = "<group>"; };
+		645291F02B535B2800855E7E /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		645291F22B547D3800855E7E /* CheckboxTableFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxTableFooter.swift; sourceTree = "<group>"; };
+		645291F52B54A6B500855E7E /* QuizListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizListView.swift; sourceTree = "<group>"; };
+		645291F72B54A6C800855E7E /* QuizListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizListViewController.swift; sourceTree = "<group>"; };
+		645291F92B54A6D700855E7E /* QuizListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizListViewModel.swift; sourceTree = "<group>"; };
+		645291FB2B54AA2A00855E7E /* QuizListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizListCell.swift; sourceTree = "<group>"; };
 		84E3BF3B40CA57932D40C305 /* Pods_Neobis_iOS_NeoQuiz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Neobis_iOS_NeoQuiz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -163,6 +175,7 @@
 		6452915F2B4F829200855E7E /* Neobis_iOS_NeoQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				645291F42B54A6A700855E7E /* QuizListScreen */,
 				645291E52B51E62900855E7E /* FilterScreen */,
 				645291DC2B51C6BC00855E7E /* ArticleScreen */,
 				645291D92B5163C100855E7E /* Models */,
@@ -246,6 +259,7 @@
 			children = (
 				645291C32B50559200855E7E /* Extension + UIColor.swift */,
 				645291D72B51548000855E7E /* Extension + UIImage.swift */,
+				645291EE2B530FF800855E7E /* Extension + UIImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -257,7 +271,6 @@
 				645291C82B50823F00855E7E /* ArticleListViewController.swift */,
 				645291CA2B50824900855E7E /* ArticleListViewModel.swift */,
 				645291D32B5143B800855E7E /* ArticleCell.swift */,
-				645291D52B514A6500855E7E /* ArticleCellHeader.swift */,
 			);
 			path = ArticleListScreen;
 			sourceTree = "<group>";
@@ -267,6 +280,7 @@
 			children = (
 				645291CD2B513C9D00855E7E /* NavigationManager.swift */,
 				645291D12B513FFB00855E7E /* CustomTitleView.swift */,
+				645291F02B535B2800855E7E /* CustomButton.swift */,
 			);
 			path = "Custom UI Views";
 			sourceTree = "<group>";
@@ -296,8 +310,20 @@
 				645291E82B51EAA400855E7E /* FilterViewModel.swift */,
 				645291EA2B51EAAB00855E7E /* FilterViewController.swift */,
 				645291EC2B51F56400855E7E /* CheckboxTableViewCell.swift */,
+				645291F22B547D3800855E7E /* CheckboxTableFooter.swift */,
 			);
 			path = FilterScreen;
+			sourceTree = "<group>";
+		};
+		645291F42B54A6A700855E7E /* QuizListScreen */ = {
+			isa = PBXGroup;
+			children = (
+				645291F52B54A6B500855E7E /* QuizListView.swift */,
+				645291F72B54A6C800855E7E /* QuizListViewController.swift */,
+				645291F92B54A6D700855E7E /* QuizListViewModel.swift */,
+				645291FB2B54AA2A00855E7E /* QuizListCell.swift */,
+			);
+			path = QuizListScreen;
 			sourceTree = "<group>";
 		};
 		8C2B56D12CC686DC2A73C511 /* Pods */ = {
@@ -442,7 +468,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				645291862B4F90B200855E7E /* MainViewModel.swift in Sources */,
-				645291D62B514A6500855E7E /* ArticleCellHeader.swift in Sources */,
 				6452918A2B4F90FF00855E7E /* SecondSectionViewModel.swift in Sources */,
 				6452918E2B4F91A500855E7E /* FirstSectionCell.swift in Sources */,
 				645291CB2B50824900855E7E /* ArticleListViewModel.swift in Sources */,
@@ -455,6 +480,7 @@
 				645291D22B513FFB00855E7E /* CustomTitleView.swift in Sources */,
 				645291E42B51D34600855E7E /* Constants.swift in Sources */,
 				645291D42B5143B800855E7E /* ArticleCell.swift in Sources */,
+				645291EF2B530FF800855E7E /* Extension + UIImageView.swift in Sources */,
 				645291CE2B513C9D00855E7E /* NavigationManager.swift in Sources */,
 				645291E22B51C6E800855E7E /* ArticleViewController.swift in Sources */,
 				645291902B4F91C300855E7E /* SecondSectionCell.swift in Sources */,
@@ -463,15 +489,21 @@
 				645291C42B50559200855E7E /* Extension + UIColor.swift in Sources */,
 				645291922B4F92CE00855E7E /* SectionHeader.swift in Sources */,
 				645291DE2B51C6D200855E7E /* ArticleView.swift in Sources */,
+				645291FA2B54A6D700855E7E /* QuizListViewModel.swift in Sources */,
 				645291E92B51EAA400855E7E /* FilterViewModel.swift in Sources */,
+				645291F82B54A6C800855E7E /* QuizListViewController.swift in Sources */,
 				645291EB2B51EAAB00855E7E /* FilterViewController.swift in Sources */,
+				645291FC2B54AA2A00855E7E /* QuizListCell.swift in Sources */,
 				645291992B4F988D00855E7E /* NetworkManager.swift in Sources */,
 				645291612B4F829300855E7E /* AppDelegate.swift in Sources */,
 				645291C92B50823F00855E7E /* ArticleListViewController.swift in Sources */,
+				645291F62B54A6B500855E7E /* QuizListView.swift in Sources */,
 				645291D82B51548000855E7E /* Extension + UIImage.swift in Sources */,
 				645291ED2B51F56400855E7E /* CheckboxTableViewCell.swift in Sources */,
+				645291F12B535B2800855E7E /* CustomButton.swift in Sources */,
 				645291952B4F987600855E7E /* Endpoint.swift in Sources */,
 				645291632B4F829300855E7E /* SceneDelegate.swift in Sources */,
+				645291F32B547D3800855E7E /* CheckboxTableFooter.swift in Sources */,
 				645291DB2B5163D100855E7E /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

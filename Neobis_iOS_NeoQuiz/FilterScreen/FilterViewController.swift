@@ -8,11 +8,17 @@
 import Foundation
 import UIKit
 
+protocol GenreDelegate {
+    func onGenreChanged(genre: [String])
+}
+
 class FilterViewController: UIViewController {
 
     let filterView: FilterView
     let filterViewModel: FilterViewModel
+    var footerView: CheckboxTableFooter?
     let navigationManager = NavigationManager()
+    var delegate: GenreDelegate?
     
     override func loadView() {
         view = filterView
@@ -27,7 +33,8 @@ class FilterViewController: UIViewController {
         filterView.configureUI(filterViewModel.genres.count)
     }
     
-    init(view: FilterView, viewModel: FilterViewModel) {
+    init(view: FilterView, viewModel: FilterViewModel, genres: [String], selectedGenres: [String]) {
+        viewModel.getArrays(genres, selectedGenres)
         filterViewModel = viewModel
         filterView = view
         super.init(nibName: nil, bundle: nil)
@@ -40,6 +47,8 @@ class FilterViewController: UIViewController {
     func addDelegates() {
         filterView.tableView.delegate = self
         filterView.tableView.dataSource = self
+        
+        filterViewModel.getRequestDelegate = self
     }
     
     func setNavigation() {
@@ -61,7 +70,8 @@ extension FilterViewController: UITableViewDelegate, UITableViewDataSource, Chec
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CheckboxTableViewCell.reuseIdentifier, for: indexPath) as! CheckboxTableViewCell
-        cell.titleLabel.text = filterViewModel.genres[indexPath.row]
+        let genre = filterViewModel.genres[indexPath.row]
+        cell.titleLabel.text = genre.prefix(1).uppercased() + genre.lowercased().dropFirst()
         cell.checkboxButton.isSelected = filterViewModel.selectedItems[indexPath.row]
         cell.delegate = self
         cell.selectionStyle = .none
@@ -71,18 +81,27 @@ extension FilterViewController: UITableViewDelegate, UITableViewDataSource, Chec
     func checkboxCell(_ cell: CheckboxTableViewCell, didChangeValue value: Bool) {
         if let indexPath = filterView.tableView.indexPath(for: cell) {
             filterViewModel.selectedItems[indexPath.row] = value
+            
+            let isAnyItemSelected = filterViewModel.selectedItems.contains(true)
+            if let confirmButton = footerView?.confirmButton {
+                confirmButton.isEnabled = isAnyItemSelected
+            }
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 64.0 // Set your desired cell height (including spacing)
+        return 64.0
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 200.0
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
         let titleLabel = UILabel()
-        titleLabel.text = "Категория:"
+        titleLabel.text = "Category:"
         titleLabel.textColor = .black
+        titleLabel.font = UIFont(name: "Nunito-Bold", size: 16)
         headerView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(16)
@@ -92,30 +111,34 @@ extension FilterViewController: UITableViewDelegate, UITableViewDataSource, Chec
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footerView = UIView()
-        let clearButton = UIButton(type: .system)
-        let attributes = [
-                            NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue,
-                            NSAttributedString.Key.font: UIFont(name: "Nunito-Bold", size: 16)
-        ] as [NSAttributedString.Key : Any]
-            
-        clearButton.setAttributedTitle(NSAttributedString(string: "Clear Selection", attributes: attributes), for: .normal)
-        clearButton.setTitleColor(.black, for: .normal)
-        clearButton.addTarget(self, action: #selector(didTapClearButton), for: .touchUpInside)
-        clearButton.contentHorizontalAlignment = .left
+        footerView = CheckboxTableFooter()
+        footerView?.clearButton.addTarget(self, action: #selector(didTapClearButton), for: .touchUpInside)
+        footerView?.confirmButton.addTarget(self, action: #selector(didTapConfirmButton), for: .touchUpInside)
         
-        footerView.addSubview(clearButton)
-        clearButton.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(16)
-            make.top.bottom.equalToSuperview().inset(8)
-        }
         return footerView
     }
 
     @objc func didTapClearButton() {
-        // Clear selected items
         filterViewModel.selectedItems = Array(repeating: false, count: filterViewModel.genres.count)
         filterView.tableView.reloadData()
     }
     
+    @objc func didTapConfirmButton() {
+        delegate?.onGenreChanged(genre: zip(filterViewModel.genres, filterViewModel.selectedItems)
+                                        .compactMap { $1 ? $0 : nil })
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+}
+
+extension FilterViewController: APIRequestDelegate {
+    func onFailedRequest() {
+        
+    }
+    
+    func onSucceedRequest() {
+        DispatchQueue.main.async {
+            self.filterView.tableView.reloadData()
+        }
+    }
 }

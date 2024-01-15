@@ -11,8 +11,9 @@ enum Endpoint {
     
     case getQuizzes(url: String = "/api/quiz")
     case getArticles(url: String = "/api/articles/all", pageNumber: Int = 1)
-    case filterArticles(url: String = "/api/articles/find", name: String = "")
+    case findArticles(url: String = "/api/articles/find", name: String = "", genres: [String] = [])
     case getFullArticle(url: String = "/api/articles/description", name: String = "")
+    case getGenres(url: String = "/api/articles/genres")
     
     var request: URLRequest? {
         guard let url = self.url else { return nil }
@@ -38,8 +39,11 @@ enum Endpoint {
         case .getArticles(_, let pageNumber):
             return [URLQueryItem(name: "pageNumber", value: "\(pageNumber)"),
                         URLQueryItem(name: "pageSize", value: "8")]
-        case .filterArticles(_, let name), .getFullArticle(_, let name):
+        case .getFullArticle(_, let name):
             return [URLQueryItem(name: "name", value: name)]
+        case .findArticles(_, let name, let genres):
+            return [URLQueryItem(name: "name", value: name),
+                    URLQueryItem(name: "genre", value: genres.joined(separator: ","))]
         default:
             return []
         }
@@ -47,14 +51,14 @@ enum Endpoint {
     
     private var path: String {
         switch self {
-        case .getQuizzes(let url), .filterArticles(let url, _), .getArticles(let url, _), .getFullArticle(let url, _):
+        case .getQuizzes(let url), .findArticles(let url, _, _), .getArticles(let url, _), .getFullArticle(let url, _), .getGenres(let url):
             return url
         }
     }
     
     private var httpMethod: String {
         switch self {
-        case .getArticles, .getQuizzes, .filterArticles, .getFullArticle:
+        case .getArticles, .getQuizzes, .findArticles, .getFullArticle, .getGenres:
             return HTTP.Method.get.rawValue
         }
     }
@@ -63,7 +67,7 @@ enum Endpoint {
 extension URLRequest {
     mutating func addValues(for endpoint: Endpoint) {
         switch endpoint {
-        case .getArticles, .getQuizzes, .filterArticles, .getFullArticle:
+        case .getArticles, .getQuizzes, .findArticles, .getFullArticle, .getGenres:
             let cookies =  URLSession.shared.configuration.httpCookieStorage?.cookies ?? [HTTPCookie()]
             self.setValue(HTTP.Headers.Value.applicationJson.rawValue, forHTTPHeaderField: HTTP.Headers.Key.contentType.rawValue)
             self.setValue(HTTP.Headers.Value.applicationJson.rawValue, forHTTPHeaderField: HTTP.Headers.Key.accept.rawValue)

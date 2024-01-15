@@ -66,12 +66,13 @@ class FilterView: UIView {
             make.width.equalToSuperview().offset(-32)
         }
         tableView.snp.makeConstraints { make in
+            make.height.equalTo(50)
             make.width.equalToSuperview().offset(-32)
         }
     }
     
     func configureUI(_ itemCount: Int) {
-        tableView.snp.makeConstraints { make in
+        tableView.snp.updateConstraints { make in
             make.height.equalTo(100 * itemCount + 200)
         }
     }

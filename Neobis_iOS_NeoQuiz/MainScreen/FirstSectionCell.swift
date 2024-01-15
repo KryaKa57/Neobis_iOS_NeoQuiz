@@ -74,22 +74,9 @@ class FirstSectionCell: BaseCell {
     }
     
     func configure(_ article: ArticleResponse, _ color: Int) {
-        var imageName = "margarita"
-        switch (article.genre) {
-        case "HISTORY": imageName = "napoleon"
-        case "PHILOSOPHY": imageName = "aristotel"
-        case "LITERATURE": imageName = "chekhov"
-        default: imageName = "margarita"
-        }
-        
         descrtiptionLabel.text = article.name
         subjectLabel.text = "#\(article.genre.prefix(1).uppercased() + article.genre.lowercased().dropFirst())"
-        subjectImageView.image = UIImage(named: imageName)
+        subjectImageView.loadImage(from: article.imageUrl)
         backgroundColor = UIColor(rgb: color)
     }
 }
-
-//        ArticleData(name: "Жизнь и правление Наполеона Бонапарта", subjectName: "История", imageName: "napoleon", minutes: 15),
-//        ArticleData(name: "Философия Аристотеля", subjectName: "Философия", imageName: "aristotel", minutes: 15),
-//        ArticleData(name: "Почему Чехов не так прост?", subjectName: "Литература", imageName: "chekhov", minutes: 10),
-//        ArticleData(name: "Почему вы неправильно поняли «Мастера и Маргариту»?", subjectName: "Литература", imageName: "margarita", minutes: 10)

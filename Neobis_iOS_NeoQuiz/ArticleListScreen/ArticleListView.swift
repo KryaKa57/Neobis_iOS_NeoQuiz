@@ -10,14 +10,70 @@ import UIKit
 import SnapKit
 
 class ArticleListView: UIView {
+    
+    lazy var searchField: UITextField = {
+        let textField = UITextField()
+
+        let placeholderAttributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor.black,
+        ]
+        textField.attributedPlaceholder = NSAttributedString(string: "Поиск статей", attributes: placeholderAttributes)
+
+        textField.borderStyle = .roundedRect
+        textField.backgroundColor = .white
+        textField.textColor = .black
+        textField.layer.borderColor = UIColor.black.cgColor
+        textField.layer.borderWidth = 1.0
+        textField.layer.cornerRadius = 8.0
+
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 20))
+        let imageView = UIImageView(frame: CGRect(x: 10, y: 0, width: 20, height: 20))
+        
+        imageView.image = UIImage(systemName: "magnifyingglass",
+                                  withConfiguration: UIImage.SymbolConfiguration(pointSize: 24, weight: .bold))
+        imageView.tintColor = .black
+        imageView.contentMode = .scaleAspectFit
+
+        paddingView.addSubview(imageView)
+        textField.leftView = paddingView
+        textField.leftViewMode = .always
+
+        return textField
+    }()
+    
+    lazy var filterCircleView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .red
+        view.layer.cornerRadius = 6
+        view.isHidden = true
+        return view
+    }()
+    
+    lazy var filterButton: UIButton = {
+        let button = UIButton()
+        let image = UIImage(named: "filter")?.resize(targetSize: CGSize(width: 16, height: 16))
+        button.setImage(image, for: .normal)
+        button.tintColor = .white
+        button.backgroundColor = .black
+        button.layer.cornerRadius = 8
+        //button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    lazy var headerStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.alignment = .center
+        stackView.spacing = 16
+        return stackView
+    }()
+    
     lazy var collectionView: UICollectionView = {
         let collection = UICollectionView(frame: self.bounds, collectionViewLayout: createLayout())
         collection.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             
         collection.backgroundColor = .white
         collection.register(ArticleCell.self, forCellWithReuseIdentifier: ArticleCell.reuseIdentifier)
-        collection.register(ArticleCellHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ArticleCellHeader.reuseIdentifier)
-            
         return collection
     }()
     
@@ -58,15 +114,36 @@ class ArticleListView: UIView {
         backgroundColor = .white
         emptyStackView.addArrangedSubview(emptyImageView)
         emptyStackView.addArrangedSubview(emptyLabel)
+        
+        headerStackView.addArrangedSubview(searchField)
+        headerStackView.addArrangedSubview(filterButton)
+        addSubview(headerStackView)
         addSubview(emptyStackView)
         addSubview(collectionView)
+        addSubview(filterCircleView)
+        
+        headerStackView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(128)
+            make.leading.equalToSuperview().inset(16)
+            make.trailing.equalToSuperview().inset(16)
+        }
+        
+        filterButton.snp.makeConstraints { make in
+            make.width.height.equalTo(searchField.snp.height)
+        }
         
         collectionView.snp.makeConstraints { make in
-            make.leading.trailing.bottom.top.equalToSuperview().inset(16)
+            make.top.equalTo(headerStackView.snp.bottom).offset(16)
+            make.leading.trailing.bottom.equalToSuperview().inset(16)
         }
         emptyStackView.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.8)
+        }
+        filterCircleView.snp.makeConstraints { make in
+            make.trailing.equalTo(filterButton.snp.trailing).inset(-3)
+            make.top.equalTo(filterButton.snp.top).inset(-3)
+            make.width.height.equalTo(12)
         }
     }
     
@@ -88,13 +165,13 @@ class ArticleListView: UIView {
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = 16
         
-        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(80))
-        let header = NSCollectionLayoutBoundarySupplementaryItem(
-            layoutSize: headerSize,
-            elementKind: UICollectionView.elementKindSectionHeader,
-            alignment: .top
-        )
-        section.boundarySupplementaryItems = [header]
+//        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(80))
+//        let header = NSCollectionLayoutBoundarySupplementaryItem(
+//            layoutSize: headerSize,
+//            elementKind: UICollectionView.elementKindSectionHeader,
+//            alignment: .top
+//        )
+//        section.boundarySupplementaryItems = [header]
 
         return section
     }

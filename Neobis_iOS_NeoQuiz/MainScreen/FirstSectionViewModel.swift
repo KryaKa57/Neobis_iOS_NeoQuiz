@@ -9,10 +9,6 @@ import Foundation
 
 class FirstSectionViewModel {
     var sections: [ArticleResponse] = [
-        ArticleResponse(name: "Жизнь и правление Наполеона Бонапарта", genre: "История", time: 10),
-        ArticleResponse(name: "Философия Аристотеля", genre: "Философия", time: 10),
-        ArticleResponse(name: "Почему Чехов не так прост?", genre: "Литература", time: 10),
-        ArticleResponse(name: "Почему вы неправильно поняли «Мастера и Маргариту»?", genre: "Литература", time: 10)
 //        ArticleData(name: "Жизнь и правление Наполеона Бонапарта", subjectName: "История", imageName: "napoleon", minutes: 15),
 //        ArticleData(name: "Философия Аристотеля", subjectName: "Философия", imageName: "aristotel", minutes: 15),
 //        ArticleData(name: "Почему Чехов не так прост?", subjectName: "Литература", imageName: "chekhov", minutes: 10),

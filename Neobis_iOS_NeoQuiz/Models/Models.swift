@@ -10,6 +10,7 @@ import Foundation
 struct QuizResponse: Codable {
     let name: String
     let genre: String
+    let imageUrl: String
     let questionAmount: Int
 }
 
@@ -17,6 +18,11 @@ struct ArticleResponse: Codable {
     let name: String
     let genre: String
     let time: Int
+    let imageUrl: String
+}
+
+struct GenreResponse: Codable {
+    let name: String
 }
 
 struct ArticleFullResponse: Codable {
@@ -24,6 +30,11 @@ struct ArticleFullResponse: Codable {
     let genre: String
     let time: Int
     let description: String
+}
+
+struct Genre {
+    let name: String
+    let isSelected: Bool
 }
 
 struct ArticleData {

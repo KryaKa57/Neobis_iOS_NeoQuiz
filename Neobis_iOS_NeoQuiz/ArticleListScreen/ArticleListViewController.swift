@@ -23,6 +23,7 @@ class ArticleListViewController: UIViewController {
         super.viewDidLoad()
 
         articleListViewModel.getArticles()
+        articleListViewModel.getGenres()
         configureCollectionView()
         configureDataSource()
         setNavigation()
@@ -41,7 +42,10 @@ class ArticleListViewController: UIViewController {
     
     func addDelegates() {
         articleListViewModel.getRequestDelegate = self
-        articleListViewModel.filterRequestDelegate = self
+        articleListViewModel.findRequestDelegate = self
+        
+        articleListView.searchField.addTarget(self, action: #selector(self.searchTextChanged(_:)), for: .editingChanged)
+        articleListView.filterButton.addTarget(self, action: #selector(self.filterButtonTapped(_:)), for: .touchUpInside)
     }
     
     func setNavigation() {
@@ -55,15 +59,24 @@ class ArticleListViewController: UIViewController {
     }
 
     @objc func searchTextChanged(_ textField: UITextField) {
-        articleListViewModel.filterArticles(textField.text ?? "")
+        articleListViewModel.findArticles(textField.text ?? "")
     }
 
     @objc func filterButtonTapped(_ button: UIButton) {
-        let nextScreen = FilterViewController(view: FilterView(), viewModel: FilterViewModel())
+        let nextScreen = FilterViewController(view: FilterView(), viewModel: FilterViewModel(), genres: articleListViewModel.genres, selectedGenres: articleListViewModel.filteredGenres)
+        nextScreen.delegate = self
         navigationController?.pushViewController(nextScreen, animated: true)
     }
 }
 
+extension ArticleListViewController: GenreDelegate {
+    func onGenreChanged(genre: [String]) {
+        articleListView.filterCircleView.isHidden = (genre.count == articleListViewModel.genres.count)
+        articleListViewModel.filteredGenres = genre
+        articleListViewModel.findArticles("")
+    }
+    
+}
 extension ArticleListViewController: APIRequestDelegate {
     func onSucceedRequest() {
         DispatchQueue.main.async {
@@ -77,10 +90,11 @@ extension ArticleListViewController: APIRequestDelegate {
     }
 }
 
-extension ArticleListViewController: FilterDelegate {
-    func onSucceedFilterRequest() {
+extension ArticleListViewController: FindDelegate {
+    func onSucceedFindRequest() {
         DispatchQueue.main.async {
-            self.reloadDataSource(self.articleListViewModel.sections.count)
+            self.applySnapshot(self.articleListViewModel.sections.count)
+            self.articleListView.collectionView.reloadData()
             if self.articleListViewModel.sections.count == 0 {
                 self.articleListView.bringSubviewToFront(self.articleListView.emptyStackView)
             } else {
@@ -89,7 +103,7 @@ extension ArticleListViewController: FilterDelegate {
         }
     }
     
-    func onFailedFilterRequest() {
+    func onFailedFindRequest() {
         
     }
 }
@@ -125,13 +139,6 @@ extension ArticleListViewController: UICollectionViewDataSource {
         cell.configure(article, color ?? 0)
         return cell
     }
-
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ArticleCellHeader.reuseIdentifier, for: indexPath) as! ArticleCellHeader
-        headerView.searchField.addTarget(self, action: #selector(self.searchTextChanged(_:)), for: .editingChanged)
-        headerView.filterButton.addTarget(self, action: #selector(self.filterButtonTapped(_:)), for: .touchUpInside)
-        return headerView
-    }
 }
 
 extension ArticleListViewController: UICollectionViewDelegateFlowLayout {
@@ -145,15 +152,6 @@ extension ArticleListViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension ArticleListViewController {
-    func reloadDataSource(_ countItems: Int) {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, AnyHashable>()
-        snapshot.appendSections([.first])
-        for i in 0..<countItems {
-            snapshot.appendItems(["\(i)"], toSection: .first)
-        }
-        dataSource.apply(snapshot, animatingDifferences: false)
-    }
-
     func applySnapshot(_ countItems: Int) {
         var snapshot = NSDiffableDataSourceSnapshot<Section, AnyHashable>()
         snapshot.appendSections([.first])
@@ -168,8 +166,6 @@ extension ArticleListViewController {
             self.collectionView(collectionView, cellForItemAt: indexPath)
         })
 
-        dataSource.supplementaryViewProvider = { (collectionView, kind, indexPath) in
-            self.collectionView(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath)
-        }
+        dataSource.supplementaryViewProvider = nil
     }
 }

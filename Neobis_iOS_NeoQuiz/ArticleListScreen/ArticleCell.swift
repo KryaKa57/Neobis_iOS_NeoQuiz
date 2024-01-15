@@ -81,17 +81,9 @@ class ArticleCell: BaseCell {
     }
     
     func configure(_ article: ArticleResponse, _ color: Int) {
-        var imageName = "margarita"
-        switch (article.genre) {
-        case "HISTORY": imageName = "napoleon"
-        case "PHILOSOPHY": imageName = "aristotel"
-        case "LITERATURE": imageName = "chekhov"
-        default: imageName = "margarita"
-        }
-        
         descrtiptionLabel.text = article.name
         subjectLabel.text = "#\(article.genre.prefix(1).uppercased() + article.genre.lowercased().dropFirst()) ◾️ \(article.time) minutes"
-        subjectImageView.image = UIImage(named: imageName)
+        subjectImageView.loadImage(from: article.imageUrl)
         backgroundColor = UIColor(rgb: color)
     }
 }
